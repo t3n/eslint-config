@@ -1,6 +1,6 @@
 # @t3n/eslint-config
 
-This package provides two extensible ESLint configurations for Javascript development (not exclusively) in the t3n.de domain.
+This package provides two extensible ESLint configurations for React and Typescript development in (not exclusively) the t3n.de domain.
 
 ## Installation 
 
