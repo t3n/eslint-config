@@ -27,6 +27,8 @@ module.exports = {
         args: 'after-used',
         ignoreRestSiblings: true
       }
-    ]
+    ],
+    'react-hooks/rules-of-hooks': 'error',
+    'react-hooks/exhaustive-deps': 'warn'
   }
 };
