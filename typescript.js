@@ -2,19 +2,19 @@ module.exports = {
   parser: '@typescript-eslint/parser',
   parserOptions: {
     ecmaFeatures: {
-      jsx: true
-    }
+      jsx: true,
+    },
   },
   extends: [
     'plugin:@typescript-eslint/recommended',
-    'prettier/@typescript-eslint'
+    'prettier/@typescript-eslint',
   ],
   settings: {
     'import/resolver': {
       node: {
-        extensions: ['.js', '.jsx', '.ts', '.tsx']
-      }
-    }
+        extensions: ['.js', '.jsx', '.ts', '.tsx'],
+      },
+    },
   },
   rules: {
     '@typescript-eslint/camelcase': 0,
@@ -25,8 +25,8 @@ module.exports = {
       {
         vars: 'all',
         args: 'after-used',
-        ignoreRestSiblings: true
-      }
-    ]
-  }
+        ignoreRestSiblings: true,
+      },
+    ],
+  },
 };
