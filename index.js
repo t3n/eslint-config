@@ -4,12 +4,12 @@ module.exports = {
     'airbnb/hooks',
     'plugin:jest/recommended',
     'plugin:prettier/recommended',
-    'prettier/react'
+    'prettier/react',
   ],
   env: {
     browser: true,
     node: true,
-    jest: true
+    jest: true,
   },
   rules: {
     'import/no-extraneous-dependencies': 0,
@@ -20,12 +20,12 @@ module.exports = {
     'react/jsx-filename-extension': [
       1,
       {
-        extensions: ['.jsx', 'tsx']
-      }
+        extensions: ['.jsx', 'tsx'],
+      },
     ],
     'react/jsx-props-no-spreading': 0,
     'react/prop-types': 0,
     'react-hooks/rules-of-hooks': 'error',
-    'react-hooks/exhaustive-deps': 'warn'
-  }
+    'react-hooks/exhaustive-deps': 'warn',
+  },
 };
