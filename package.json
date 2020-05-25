@@ -1,6 +1,6 @@
 {
   "name": "@t3n/eslint-config",
-  "version": "3.0.0",
+  "version": "3.0.1",
   "description": "ESLint config for t3n JS projects",
   "scripts": {
     "prettier:check": "prettier --check './**/*.js'",
