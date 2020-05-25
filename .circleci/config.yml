@@ -64,6 +64,7 @@ jobs:
       - run: ssh-keyscan github.com >> ~/.ssh/known_hosts
       - run: echo "//registry.npmjs.org/:_authToken=$NPM_TOKEN" > ~/.npmrc
       - run: npm version patch && npm publish
+      - run: git push && git push --tags
 
   publishMinor:
     working_directory: *workspace_root
@@ -79,6 +80,7 @@ jobs:
       - run: ssh-keyscan github.com >> ~/.ssh/known_hosts
       - run: echo "//registry.npmjs.org/:_authToken=$NPM_TOKEN" > ~/.npmrc
       - run: npm version minor && npm publish
+      - run: git push && git push --tags
 
   publishMajor:
     working_directory: *workspace_root
