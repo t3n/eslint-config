@@ -58,9 +58,10 @@ jobs:
       - attach_workspace: *attach_workspace
       - add_ssh_keys:
           fingerprints:
-            - "d0:a7:2b:68:d0:77:5f:25:cc:39:40:7f:c7:75:9c:29"
+            - 'd0:a7:2b:68:d0:77:5f:25:cc:39:40:7f:c7:75:9c:29'
       - run: git config user.email "circleci@t3n.de"
       - run: git config user.name "CircleCI Bot"
+      - run: ssh-keyscan github.com >> ~/.ssh/known_hosts
       - run: echo "//registry.npmjs.org/:_authToken=$NPM_TOKEN" > ~/.npmrc
       - run: npm version patch && npm publish
 
@@ -72,9 +73,10 @@ jobs:
       - attach_workspace: *attach_workspace
       - add_ssh_keys:
           fingerprints:
-            - "d0:a7:2b:68:d0:77:5f:25:cc:39:40:7f:c7:75:9c:29"
+            - 'd0:a7:2b:68:d0:77:5f:25:cc:39:40:7f:c7:75:9c:29'
       - run: git config user.email "circleci@t3n.de"
       - run: git config user.name "CircleCI Bot"
+      - run: ssh-keyscan github.com >> ~/.ssh/known_hosts
       - run: echo "//registry.npmjs.org/:_authToken=$NPM_TOKEN" > ~/.npmrc
       - run: npm version minor && npm publish
 
@@ -86,11 +88,13 @@ jobs:
       - attach_workspace: *attach_workspace
       - add_ssh_keys:
           fingerprints:
-            - "d0:a7:2b:68:d0:77:5f:25:cc:39:40:7f:c7:75:9c:29"
+            - 'd0:a7:2b:68:d0:77:5f:25:cc:39:40:7f:c7:75:9c:29'
       - run: git config user.email "circleci@t3n.de"
       - run: git config user.name "CircleCI Bot"
+      - run: ssh-keyscan github.com >> ~/.ssh/known_hosts
       - run: echo "//registry.npmjs.org/:_authToken=$NPM_TOKEN" > ~/.npmrc
       - run: npm version major && npm publish
+      - run: git push && git push --tags
 
 workflows:
   version: 2
