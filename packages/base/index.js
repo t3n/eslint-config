@@ -3,7 +3,6 @@ module.exports = {
     'airbnb-base',
     'plugin:jest/recommended',
     'plugin:prettier/recommended',
-    'prettier/react',
   ],
   env: {
     browser: true,
