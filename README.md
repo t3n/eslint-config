@@ -1,46 +1,16 @@
 # @t3n/eslint-config
 
-This package provides two extensible ESLint configurations for React and Typescript development in (not exclusively) the t3n.de domain.
+This monorepo provides the development environment for three packages with extensible ESLint configurations for Javascript, React and Typescript development in (not exclusively) the t3n.de domain.
 
-## Installation 
-
-```
-npm install --dev @t3n/eslint-config
-```
-
-To use the provided ESLint configurations, you need to have `eslint` as well as some other peerDependencies installed in your project. You can do this by following one of these two steps: 
-
-**Install peerDependencies automatically (requires npm 5+)**
-
-```sh
-npx install-peerdeps --dev @t3n/eslint-config
-```
-
-**Manually install peerDependencies**
-
-List the projects peerDependencies by running the following command:
-
-```sh
-npm info "eslint-config-airbnb-base@latest" peerDependencies
-```
-
-Install all the listed peerDependencies as devDependencies in your project.
-
-## Usage 
+## Packages
 
 ### @t3n/eslint-config
 
-`@t3n/eslint-config` extends `airbnb` ESLint rules, including react rules, as well as rules for `jest` unit tests and `prettier`.
+Provides the extensible base eslint configuration for javascript projects. It extends `eslint-config-airbnb-base`, as well as rules for `jest` unit tests and `prettier` formatting.
+
+#### Usage
 
 In your project's [.eslintrc](https://eslint.org/docs/user-guide/configuring), add the following:
-
-```
-{
-  "extends": ["@t3n"]
-}
-```
-
-or: 
 
 ```
 {
@@ -48,14 +18,34 @@ or:
 }
 ```
 
-### @t3n/eslint-config/typescript
+### @t3n/eslint-config-react
 
-`@t3n/eslint-config/typescript` adds `@typescript-eslint` configuration and rules as well as Typescript rules for `prettier`.
+Use this configuration alongside the base configuration if your project uses React. It extends `eslint-config-airbnb`.
+
+#### Usage
 
 In your project's [.eslintrc](https://eslint.org/docs/user-guide/configuring), add the following:
 
 ```
 {
-  "extends": ["@t3n/eslint-config/typescript"]
+  "extends": ["@t3n/eslint-config", "@t3n/eslint-config-react"]
 }
 ```
+
+### @t3n/eslint-config-typescript
+
+Use this configuration alongside the base configuration if your project uses Typescript.
+
+#### Usage
+
+In your project's [.eslintrc](https://eslint.org/docs/user-guide/configuring), add the following:
+
+```
+{
+  "extends": ["@t3n/eslint-config", "@t3n/eslint-config-typescript"]
+}
+```
+
+## Development
+
+Install all necessary development dependencies by running `npm install --dev`

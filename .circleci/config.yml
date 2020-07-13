@@ -63,8 +63,7 @@ jobs:
       - run: git config user.name "CircleCI Bot"
       - run: ssh-keyscan github.com >> ~/.ssh/known_hosts
       - run: echo "//registry.npmjs.org/:_authToken=$NPM_TOKEN" > ~/.npmrc
-      - run: npm version patch && npm publish
-      - run: git push && git push --tags
+      - run: ./node_modules/.bin/lerna publish patch --no-verify-access --yes
 
   publishMinor:
     working_directory: *workspace_root
@@ -79,8 +78,7 @@ jobs:
       - run: git config user.name "CircleCI Bot"
       - run: ssh-keyscan github.com >> ~/.ssh/known_hosts
       - run: echo "//registry.npmjs.org/:_authToken=$NPM_TOKEN" > ~/.npmrc
-      - run: npm version minor && npm publish
-      - run: git push && git push --tags
+      - run: ./node_modules/.bin/lerna publish minor --no-verify-access --force-publish --yes
 
   publishMajor:
     working_directory: *workspace_root
@@ -96,7 +94,7 @@ jobs:
       - run: ssh-keyscan github.com >> ~/.ssh/known_hosts
       - run: echo "//registry.npmjs.org/:_authToken=$NPM_TOKEN" > ~/.npmrc
       - run: npm version major && npm publish
-      - run: git push && git push --tags
+      - run: ./node_modules/.bin/lerna publish major --no-verify-access --force-publish --yes
 
 workflows:
   version: 2
