@@ -10,10 +10,19 @@ module.exports = {
     jest: true,
   },
   rules: {
-    'import/no-extraneous-dependencies': 0,
-    'import/extensions': 0,
-    'import/prefer-default-export': 0,
-    'no-console': 0,
-    'no-nested-ternary': 0,
+    'import/extensions': [
+      'error',
+      'ignorePackages',
+      {
+        js: 'never',
+        mjs: 'never',
+        jsx: 'never',
+        ts: 'never',
+        tsx: 'never',
+      },
+    ],
+    'import/prefer-default-export': 1,
+    'no-console': 1,
+    'no-nested-ternary': 1,
   },
 };
