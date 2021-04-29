@@ -1,5 +1,6 @@
 module.exports = {
   extends: ['airbnb', 'airbnb/hooks', 'plugin:prettier/recommended'],
+  plugins: ['simple-import-sort'],
   env: {
     browser: true,
     node: true,
@@ -31,5 +32,26 @@ module.exports = {
     'react/require-default-props': 0,
     'react-hooks/rules-of-hooks': 'error',
     'react-hooks/exhaustive-deps': 'warn',
+    'simple-import-sort/imports': [
+      'error',
+      {
+        groups: [
+          // Side effect imports.
+          ['^\\u0000'],
+          // Packages.
+          // React, then things that start with a letter (or digit or underscore), or `@` followed by a letter.
+          ['^react', '^@?\\w'],
+          // Absolute imports and other imports such as Vue-style `@/foo`.
+          // Anything not matched in another group.
+          ['^'],
+          // @†3n namespace packages
+          ['^@t3n'],
+          // Relative imports.
+          // Anything that starts with a dot.
+          ['^\\.'],
+        ],
+      },
+    ],
+    'simple-import-sort/exports': 'error',
   },
 };
