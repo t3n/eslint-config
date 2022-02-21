@@ -1,7 +1,7 @@
 // eslint-disable-next-line no-use-before-define
 import React, { useEffect, useState } from 'react';
 
-export interface ComponentProps {
+interface ComponentProps {
   name: string;
   greeting?: string;
 }
@@ -21,6 +21,20 @@ export const StatefulComponent: React.FC = () => {
 export const ComponentWithProps: React.FC<ComponentProps> = ({ name }) => {
   return <p>{name}</p>;
 };
+
+export const ComponentWithOptionalProps: React.FC<ComponentProps> = ({
+  name,
+  greeting,
+}) => (
+  <p>
+    {greeting || 'Hello'} {name}
+  </p>
+);
+
+export const ComponentWithOptionalPropsParent: React.FC<ComponentProps> = ({
+  name,
+  greeting,
+}) => <ComponentWithOptionalProps name={name} greeting={greeting} />;
 
 export const CompositeComponent: React.FC = () => (
   <div>

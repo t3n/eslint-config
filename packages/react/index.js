@@ -28,6 +28,8 @@ module.exports = {
       },
     ],
     'react/jsx-props-no-spreading': 0,
+    'react/no-unused-prop-types': 0,
+    'react/require-default-props': 0,
     'react-hooks/rules-of-hooks': 'error',
     'react-hooks/exhaustive-deps': 'warn',
     'react/function-component-definition': [
