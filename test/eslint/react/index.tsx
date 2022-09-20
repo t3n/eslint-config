@@ -1,4 +1,3 @@
-// eslint-disable-next-line no-use-before-define
 import React, { useEffect, useState } from 'react';
 
 interface ComponentProps {
@@ -51,5 +50,11 @@ export const ComponentWithSpreadProps: React.FC<ComponentProps> = ({
     {children}
   </div>
 );
+
+export const ComponentWithMissingPropTypesValidation = ({
+  name,
+}: ComponentProps) => {
+  return <div>Hello {name}</div>;
+};
 
 export default CompositeComponent;
