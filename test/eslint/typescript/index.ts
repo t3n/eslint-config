@@ -12,4 +12,4 @@ export const foobarValues: FooBarInterface = {
   bar: 1337,
 };
 
-export type FooBarFooValue = typeof foobarValues['foo'];
+export type FooBarFooValue = (typeof foobarValues)['foo'];
