@@ -58,9 +58,9 @@ jobs:
       - attach_workspace: *attach_workspace
       - add_ssh_keys:
           fingerprints:
-            - 'd0:a7:2b:68:d0:77:5f:25:cc:39:40:7f:c7:75:9c:29'
-      - run: git config user.email "circleci@t3n.de"
-      - run: git config user.name "CircleCI Bot"
+            - 'de:81:87:6b:2c:21:ff:a6:bc:57:11:9b:bb:28:09:25'
+      - run: git config user.email "devops@t3n.de"
+      - run: git config user.name "t3n Devops"
       - run: ssh-keyscan github.com >> ~/.ssh/known_hosts
       - run: echo "//registry.npmjs.org/:_authToken=$NPM_TOKEN" > ~/.npmrc
       - run: ./node_modules/.bin/lerna publish patch --no-verify-access --force-publish --yes
@@ -73,9 +73,9 @@ jobs:
       - attach_workspace: *attach_workspace
       - add_ssh_keys:
           fingerprints:
-            - 'd0:a7:2b:68:d0:77:5f:25:cc:39:40:7f:c7:75:9c:29'
-      - run: git config user.email "circleci@t3n.de"
-      - run: git config user.name "CircleCI Bot"
+            - 'de:81:87:6b:2c:21:ff:a6:bc:57:11:9b:bb:28:09:25'
+      - run: git config user.email "devops@t3n.de"
+      - run: git config user.name "t3n Devops"
       - run: ssh-keyscan github.com >> ~/.ssh/known_hosts
       - run: echo "//registry.npmjs.org/:_authToken=$NPM_TOKEN" > ~/.npmrc
       - run: ./node_modules/.bin/lerna publish minor --no-verify-access --force-publish --yes
@@ -88,9 +88,9 @@ jobs:
       - attach_workspace: *attach_workspace
       - add_ssh_keys:
           fingerprints:
-            - 'd0:a7:2b:68:d0:77:5f:25:cc:39:40:7f:c7:75:9c:29'
-      - run: git config user.email "circleci@t3n.de"
-      - run: git config user.name "CircleCI Bot"
+            - 'de:81:87:6b:2c:21:ff:a6:bc:57:11:9b:bb:28:09:25'
+      - run: git config user.email "devops@t3n.de"
+      - run: git config user.name "t3n Devops"
       - run: ssh-keyscan github.com >> ~/.ssh/known_hosts
       - run: echo "//registry.npmjs.org/:_authToken=$NPM_TOKEN" > ~/.npmrc
       - run: ./node_modules/.bin/lerna publish major --no-verify-access --force-publish --yes
