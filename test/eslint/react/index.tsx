@@ -1,8 +1,9 @@
-import React, { useEffect, useState } from 'react';
+import React, { ReactNode, useEffect, useState } from 'react';
 
 interface ComponentProps {
   name: string;
   greeting?: string;
+  children?: ReactNode;
 }
 
 export const Foo: React.FC = () => <h1>Bar</h1>;
