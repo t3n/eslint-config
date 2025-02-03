@@ -5,7 +5,7 @@
   "scripts": {
     "prettier:check": "lerna run prettier:check --parallel",
     "lint": "eslint ./test/** && lerna run lint --parallel",
-    "upgrade-interactive": "npm-check -u"
+    "upgrade-interactive": "npm-check-updates --interactive && npm-check-updates --interactive --packageFile packages/base/package.json && npm-check-updates --interactive --packageFile packages/react/package.json && npm-check-updates --interactive --packageFile packages/typescript/package.json "
   },
   "repository": {
     "type": "git",
@@ -25,15 +25,15 @@
     "eslint-plugin-import": "^2.31.0",
     "eslint-plugin-jest": "^27.9.0",
     "eslint-plugin-jsx-a11y": "^6.10.2",
-    "eslint-plugin-prettier": "^5.2.1",
-    "eslint-plugin-react": "^7.37.2",
+    "eslint-plugin-prettier": "^5.2.3",
+    "eslint-plugin-react": "^7.37.4",
     "eslint-plugin-react-hooks": "^4.6.2",
     "eslint-plugin-simple-import-sort": "^12.1.1",
     "jest": "^29.7.0",
     "lerna": "^8.1.9",
-    "npm-check": "^6.0.1",
-    "prettier": "^3.3.3",
-    "typescript": "^5.6.3"
+    "npm-check-updates": "^17.1.14",
+    "prettier": "^3.4.2",
+    "typescript": "^5.7.3"
   },
   "publishConfig": {
     "registry": "https://registry.npmjs.org/",
