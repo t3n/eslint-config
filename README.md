@@ -6,7 +6,7 @@ This monorepo provides the development environment for three packages with exten
 
 ### @t3n/eslint-config
 
-Provides the extensible base eslint configuration for javascript projects. It extends `eslint-config-airbnb-base`, as well as rules for `jest` unit tests and `prettier` formatting.
+Provides the extensible base eslint configuration for javascript projects.
 
 #### Usage
 
@@ -20,7 +20,7 @@ In your project's [.eslintrc](https://eslint.org/docs/user-guide/configuring), a
 
 ### @t3n/eslint-config-react
 
-Use this configuration alongside the base configuration if your project uses React. It extends `eslint-config-airbnb`.
+Use this configuration alongside the base configuration if your project uses React.
 
 #### Usage
 
@@ -48,4 +48,4 @@ In your project's [.eslintrc](https://eslint.org/docs/user-guide/configuring), a
 
 ## Development
 
-Install all necessary development dependencies by running `npm install --dev`
+Install all necessary development dependencies by running `npm install`
