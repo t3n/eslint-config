@@ -1,14 +1,14 @@
 module.exports = {
+  extends: [
+    'plugin:@typescript-eslint/recommended',
+    'plugin:prettier/recommended',
+  ],
   parser: '@typescript-eslint/parser',
   parserOptions: {
     ecmaFeatures: {
       jsx: true,
     },
   },
-  extends: [
-    'plugin:prettier/recommended',
-    'plugin:@typescript-eslint/recommended',
-  ],
   settings: {
     'import/resolver': {
       node: {

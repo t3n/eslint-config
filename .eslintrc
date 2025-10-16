@@ -1,3 +1,7 @@
 {
-  "extends": ["./packages/react/index.js", "./packages/typescript/index.js"]
+  "extends": [
+    "./packages/base/index.js",
+    "./packages/react/index.js",
+    "./packages/typescript/index.js",
+  ],
 }

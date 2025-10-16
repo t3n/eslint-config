@@ -18,6 +18,18 @@ export const StatefulComponent: React.FC = () => {
   return <p>{name}</p>;
 };
 
+export const StatefulSideEffectComponent: React.FC = () => {
+  const [firstName] = useState<string | undefined>();
+  const [lastName] = useState<string | undefined>();
+  const [name, setName] = useState<string | undefined>();
+
+  useEffect(() => {
+    setName(`${firstName || 'Foo'} ${lastName || 'Bar'}`);
+  }, [firstName, lastName]);
+
+  return <p>{name}</p>;
+};
+
 export const ComponentWithProps: React.FC<ComponentProps> = ({ name }) => {
   return <p>{name}</p>;
 };

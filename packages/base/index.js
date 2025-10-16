@@ -1,6 +1,7 @@
 module.exports = {
   extends: [
-    'airbnb-base',
+    'eslint:recommended',
+    'plugin:import/recommended',
     'plugin:jest/recommended',
     'plugin:prettier/recommended',
   ],
@@ -22,7 +23,6 @@ module.exports = {
         tsx: 'never',
       },
     ],
-    'import/prefer-default-export': 1,
     'no-console': 1,
     'no-nested-ternary': 1,
     'simple-import-sort/imports': [
