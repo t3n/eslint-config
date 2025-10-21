@@ -1,6 +1,6 @@
 {
   "name": "@t3n/eslint-config-react",
-  "version": "6.2.4",
+  "version": "7.0.0",
   "description": "ESLint config for t3n react projects",
   "type": "module",
   "scripts": {
@@ -16,11 +16,11 @@
   "license": "ISC",
   "peerDependencies": {
     "@eslint-react/eslint-plugin": "^2.2.0",
+    "eslint": "^9.0.0",
     "eslint-config-prettier": "^10.1.0",
     "eslint-plugin-jsx-a11y": "^6.10.0",
     "eslint-plugin-prettier": "^5.5.0",
     "eslint-plugin-react-hooks": "^7.0.0",
-    "eslint": "^9.0.0",
     "globals": "^16.0.0",
     "prettier": "^3.0.0"
   },
