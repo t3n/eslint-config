@@ -25,7 +25,7 @@ aliases:
 jobs:
   checkout_and_build:
     docker:
-      - image: circleci/node:lts
+      - image: cimg/node:22.20.0
     steps:
       - checkout
 
@@ -37,7 +37,7 @@ jobs:
   prettier:
     working_directory: *workspace_root
     docker:
-      - image: circleci/node:lts
+      - image: cimg/node:22.20.0
     steps:
       - attach_workspace: *attach_workspace
       - run: npm run prettier:check
@@ -45,7 +45,7 @@ jobs:
   lint:
     working_directory: *workspace_root
     docker:
-      - image: circleci/node:lts
+      - image: cimg/node:22.20.0
     steps:
       - attach_workspace: *attach_workspace
       - run: npm run lint
@@ -53,7 +53,7 @@ jobs:
   publishPatch:
     working_directory: *workspace_root
     docker:
-      - image: circleci/node:lts
+      - image: cimg/node:22.20.0
     steps:
       - attach_workspace: *attach_workspace
       - add_ssh_keys:
@@ -68,7 +68,7 @@ jobs:
   publishMinor:
     working_directory: *workspace_root
     docker:
-      - image: circleci/node:lts
+      - image: cimg/node:22.20.0
     steps:
       - attach_workspace: *attach_workspace
       - add_ssh_keys:
@@ -83,7 +83,7 @@ jobs:
   publishMajor:
     working_directory: *workspace_root
     docker:
-      - image: circleci/node:lts
+      - image: cimg/node:22.20.0
     steps:
       - attach_workspace: *attach_workspace
       - add_ssh_keys:
