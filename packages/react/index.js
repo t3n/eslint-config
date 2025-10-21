@@ -1,63 +1,40 @@
-module.exports = {
-  extends: ['airbnb', 'airbnb/hooks', 'plugin:prettier/recommended'],
-  plugins: ['simple-import-sort'],
-  env: {
-    browser: true,
-    node: true,
-    jest: true,
+// import reactPlugin from 'eslint-plugin-react';
+import eslintPluginReact from '@eslint-react/eslint-plugin';
+import { defineConfig } from 'eslint/config';
+import eslintPluginJsxA11y from 'eslint-plugin-jsx-a11y';
+import eslintPluginPrettierRecommended from 'eslint-plugin-prettier/recommended';
+import eslintPluginReactHooks from 'eslint-plugin-react-hooks';
+import globals from 'globals';
+
+export default defineConfig([
+  eslintPluginJsxA11y.flatConfigs.recommended,
+  eslintPluginReact.configs.recommended,
+  eslintPluginReactHooks.configs.flat.recommended,
+  eslintPluginPrettierRecommended,
+  {
+    languageOptions: {
+      ecmaVersion: 'latest',
+      sourceType: 'module',
+      globals: {
+        ...globals.browser,
+        ...globals.node,
+        ...globals.jest,
+        ...globals.serviceworker,
+      },
+      parserOptions: {
+        ecmaFeatures: {
+          jsx: true,
+        },
+      },
+    },
   },
-  rules: {
-    'import/extensions': [
-      'error',
-      'ignorePackages',
-      {
-        js: 'never',
-        mjs: 'never',
-        jsx: 'never',
-        ts: 'never',
-        tsx: 'never',
-      },
-    ],
-    'import/prefer-default-export': 1,
-    'no-console': 1,
-    'no-nested-ternary': 1,
-    'react/jsx-filename-extension': [
-      1,
-      {
-        extensions: ['.jsx', 'tsx'],
-      },
-    ],
-    'react/jsx-props-no-spreading': 0,
-    'react/no-unused-prop-types': 0,
-    'react/require-default-props': 0,
-    'react/prop-types': 0,
-    'no-use-before-define': 0,
-    'react-hooks/rules-of-hooks': 'error',
-    'react-hooks/exhaustive-deps': 'warn',
-    'react/function-component-definition': [
-      2,
-      { namedComponents: 'arrow-function' },
-    ],
-    'simple-import-sort/imports': [
-      'error',
-      {
-        groups: [
-          // Side effect imports.
-          ['^\\u0000'],
-          // Packages.
-          // React, then things that start with a letter (or digit or underscore), or `@` followed by a letter.
-          ['^react', '^@?\\w'],
-          // Absolute imports and other imports such as Vue-style `@/foo`.
-          // Anything not matched in another group.
-          ['^'],
-          // @†3n namespace packages
-          ['^@t3n'],
-          // Relative imports.
-          // Anything that starts with a dot.
-          ['^\\.'],
-        ],
-      },
-    ],
-    'simple-import-sort/exports': 'error',
+  {
+    files: ['**/*.tsx', '**/*.jsx'],
+    rules: {
+      '@eslint-react/naming-convention/filename-extension': [
+        'warn',
+        'as-needed',
+      ],
+    },
   },
-};
+]);

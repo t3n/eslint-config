@@ -12,8 +12,27 @@ export const StatefulComponent: React.FC = () => {
   const [name, setName] = useState<string | undefined>();
 
   useEffect(() => {
-    setName('Foo');
+    Promise.resolve().then(() => setName('Foo'));
   }, []);
+
+  return <p>{name}</p>;
+};
+
+export const StatefulSideEffectComponent: React.FC = () => {
+  const [firstName, setFirstName] = useState<string | undefined>();
+  const [lastName, setLastName] = useState<string | undefined>();
+  const [name, setName] = useState<string | undefined>();
+
+  useEffect(() => {
+    Promise.resolve().then(() => setFirstName('Foo'));
+    Promise.resolve().then(() => setLastName('Bar'));
+  }, []);
+
+  useEffect(() => {
+    Promise.resolve().then(() => {
+      setName(`${firstName || ''} ${lastName || ''}`);
+    });
+  }, [firstName, lastName]);
 
   return <p>{name}</p>;
 };

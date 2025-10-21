@@ -1,3 +1,0 @@
-{
-  "extends": ["./packages/react/index.js", "./packages/typescript/index.js"]
-}
