@@ -2,6 +2,7 @@
   "name": "@t3n/eslint-config",
   "version": "6.2.4",
   "description": "ESLint config for t3n JS projects",
+  "type": "module",
   "scripts": {
     "prettier:check": "prettier --check './**/*.js'",
     "lint": "eslint './**/*.js'"
@@ -14,12 +15,14 @@
   "author": "",
   "license": "ISC",
   "peerDependencies": {
+    "@eslint/js": "^9.0.0",
     "eslint-config-prettier": "^10.1.0",
-    "eslint-plugin-import": "^2.32.0",
+    "eslint-plugin-import-x": "^4.16.0",
     "eslint-plugin-jest": "^29.0.0",
     "eslint-plugin-prettier": "^5.5.0",
     "eslint-plugin-simple-import-sort": "^12.1.0",
     "eslint": "^9.0.0",
+    "globals": "^16.0.0",
     "prettier": "^3.0.0"
   },
   "publishConfig": {

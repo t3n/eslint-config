@@ -1,31 +1,40 @@
-module.exports = {
-  extends: [
-    'plugin:react/recommended',
-    'plugin:react-hooks/recommended',
-    'plugin:jsx-a11y/recommended',
-    'plugin:prettier/recommended',
-  ],
-  env: {
-    browser: true,
-    node: true,
-    jest: true,
-  },
-  rules: {
-    'react/jsx-filename-extension': [
-      1,
-      {
-        extensions: ['.jsx', 'tsx'],
+// import reactPlugin from 'eslint-plugin-react';
+import eslintPluginReact from '@eslint-react/eslint-plugin';
+import { defineConfig } from 'eslint/config';
+import eslintPluginJsxA11y from 'eslint-plugin-jsx-a11y';
+import eslintPluginPrettierRecommended from 'eslint-plugin-prettier/recommended';
+import eslintPluginReactHooks from 'eslint-plugin-react-hooks';
+import globals from 'globals';
+
+export default defineConfig([
+  eslintPluginJsxA11y.flatConfigs.recommended,
+  eslintPluginReact.configs.recommended,
+  eslintPluginReactHooks.configs.flat.recommended,
+  eslintPluginPrettierRecommended,
+  {
+    languageOptions: {
+      ecmaVersion: 'latest',
+      sourceType: 'module',
+      globals: {
+        ...globals.browser,
+        ...globals.node,
+        ...globals.jest,
+        ...globals.serviceworker,
       },
-    ],
-    'react/jsx-props-no-spreading': 0,
-    'react/no-unused-prop-types': 0,
-    'react/require-default-props': 0,
-    'react/prop-types': 0,
-    'react-hooks/rules-of-hooks': 'error',
-    'react-hooks/exhaustive-deps': 'warn',
-    'react/function-component-definition': [
-      2,
-      { namedComponents: 'arrow-function' },
-    ],
+      parserOptions: {
+        ecmaFeatures: {
+          jsx: true,
+        },
+      },
+    },
   },
-};
+  {
+    files: ['**/*.tsx', '**/*.jsx'],
+    rules: {
+      '@eslint-react/naming-convention/filename-extension': [
+        'warn',
+        'as-needed',
+      ],
+    },
+  },
+]);
